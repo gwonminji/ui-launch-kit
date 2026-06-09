@@ -22,6 +22,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Keep this file as the global HTML/document wrapper only.
   return (
     <html
       lang="en"
