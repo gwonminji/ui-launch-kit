@@ -1,49 +1,60 @@
+import { Section } from "@/components/ui/Section";
+import { Card } from "@/components/ui/Card";
 import { Zap, Box, Rocket } from "lucide-react";
 
 export default function Features() {
   return (
-    <section className="bg-surface/30 text-foreground py-40 px-6 border-t border-border">
+    <Section>
       <div className="max-w-6xl mx-auto">
 
         <div className="text-center">
-          <h2 className="text-4xl font-semibold tracking-tight">
+          <h2 className="text-4xl font-semibold">
             Everything you need to ship faster.
           </h2>
-
-          <p className="mt-6 text-muted-foreground">
-            A minimal system built for real SaaS products.
-          </p>
         </div>
 
+        {/* 동일 너비 grid */}
         <div className="mt-20 grid md:grid-cols-3 gap-8">
 
-          <div className="p-7 rounded-2xl border border-border bg-background hover:shadow-sm transition">
-            <Zap className="w-5 h-5 text-primary" />
-            <h3 className="mt-6 text-lg font-semibold">Fast Setup</h3>
-            <p className="mt-3 text-muted-foreground">
-              Start building in minutes, not hours.
+          <Card className="
+            hover:-translate-y-1 transition duration-300
+          ">
+            <div className="w-10 h-10 rounded-md bg-surface flex items-center justify-center mb-4">
+              <Rocket className="w-5 h-5 text-primary" />
+            </div>
+            <h3 className="font-semibold">Production Ready</h3>
+            <p className="mt-2 text-muted">
+              Built with scalable architecture.
             </p>
-          </div>
+          </Card>
 
-          <div className="p-7 rounded-2xl border border-border bg-background hover:shadow-sm transition">
-            <Box className="w-5 h-5 text-primary" />
-            <h3 className="mt-6 text-lg font-semibold">Structured System</h3>
-            <p className="mt-3 text-muted-foreground">
-              Clean architecture designed for scalability.
+          <Card className="
+            hover:-translate-y-1 transition duration-300
+          ">
+            <div className="w-10 h-10 rounded-md bg-surface flex items-center justify-center mb-4">
+              <Zap className="w-5 h-5 text-primary" />
+            </div>
+            <h3 className="font-semibold">Fast Setup</h3>
+            <p className="mt-2 text-muted">
+              Start in minutes without config pain.
             </p>
-          </div>
+          </Card>
 
-          <div className="p-7 rounded-2xl border border-border bg-background hover:shadow-sm transition">
-            <Rocket className="w-5 h-5 text-primary" />
-            <h3 className="mt-6 text-lg font-semibold">Production Ready</h3>
-            <p className="mt-3 text-muted-foreground">
-              Deploy-ready from day one.
+          <Card className="
+            hover:-translate-y-1 transition duration-300
+          ">
+            <div className="w-10 h-10 rounded-md bg-surface flex items-center justify-center mb-4">
+              <Box className="w-5 h-5 text-primary" />
+            </div>
+            <h3 className="font-semibold">Modular System</h3>
+            <p className="mt-2 text-muted">
+              Reusable components for every section.
             </p>
-          </div>
+          </Card>
 
         </div>
 
       </div>
-    </section>
+    </Section>
   );
 }

@@ -1,31 +1,28 @@
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-
-type ButtonProps = {
-  href: string;
-  children: React.ReactNode;
-  variant?: "primary" | "ghost";
-  className?: string;
-};
+import { cn } from "@/lib/cn";
 
 export function Button({
-  href,
-  children,
   variant = "primary",
-  className,
-}: ButtonProps) {
+  children,
+}: {
+  variant?: "primary" | "outline" | "ghost";
+  children: React.ReactNode;
+}) {
   return (
-    <Link
-      href={href}
+    <button
       className={cn(
-        "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition-colors",
-        variant === "primary"
-          ? "bg-(--color-accent) text-white hover:bg-(--color-accent-strong)"
-          : "border border-black/10 bg-transparent text-foreground hover:bg-black/5",
-        className,
+        "px-6 py-3 rounded-md text-sm font-medium transition",
+
+        variant === "primary" &&
+          "bg-primary text-white hover:bg-primary-hover",
+
+        variant === "outline" &&
+          "border border-border bg-transparent hover:bg-surface",
+
+        variant === "ghost" &&
+          "hover:bg-surface"
       )}
     >
       {children}
-    </Link>
+    </button>
   );
 }
